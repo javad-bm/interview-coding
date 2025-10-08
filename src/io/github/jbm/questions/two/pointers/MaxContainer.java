@@ -1,6 +1,5 @@
 package io.github.jbm.questions.two.pointers;
 
-import java.util.List;
 
 public class MaxContainer {
 

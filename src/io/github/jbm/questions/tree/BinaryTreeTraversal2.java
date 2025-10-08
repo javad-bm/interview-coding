@@ -1,3 +1,5 @@
+package io.github.jbm.questions.tree;
+
 import java.util.*;
 
 public class BinaryTreeTraversal2 {
@@ -13,8 +15,8 @@ public class BinaryTreeTraversal2 {
             return;
         }       
         result.add(node.value);
-        dfsRecursive(node.leftChild, result);       
-        dfsRecursive(node.rightChild, result);
+        dfsRecursive(node.left, result);       
+        dfsRecursive(node.right, result);
     }
 
     public static <T> List<T> dfsStack(BinaryTreeNode<T> root) {
@@ -27,8 +29,8 @@ public class BinaryTreeTraversal2 {
             BinaryTreeNode<T> node = stack.pop();
             result.add(node.value);
         
-            if (node.rightChild != null) stack.push(node.rightChild);
-            if (node.leftChild  != null) stack.push(node.leftChild);            
+            if (node.right != null) stack.push(node.right);
+            if (node.left  != null) stack.push(node.left);            
         }
         return result;
     }
@@ -41,8 +43,8 @@ public class BinaryTreeTraversal2 {
         if (node == null) {
             return 0;
         }
-        int rightLenght = findLongestPathRecursive(node.rightChild);
-        int leftLength = findLongestPathRecursive(node.leftChild);
+        int rightLenght = findLongestPathRecursive(node.right);
+        int leftLength = findLongestPathRecursive(node.left);
 
         return 1 + Math.max(rightLenght, leftLength);    
     }
@@ -53,8 +55,8 @@ public class BinaryTreeTraversal2 {
             return result;
         }
 
-        List<T> rightList = findLongestPathNodes(root.rightChild);
-        List<T> lefList = findLongestPathNodes(root.leftChild);
+        List<T> rightList = findLongestPathNodes(root.right);
+        List<T> lefList = findLongestPathNodes(root.left);
 
         result.add(root.value);
         if (rightList.size() > lefList.size()) {
@@ -82,8 +84,8 @@ public class BinaryTreeTraversal2 {
                 BinaryTreeNode<T> node = queue.poll();
                 result.add(node.value);
                 
-                if (node.leftChild != null) queue.offer(node.leftChild);
-                if (node.rightChild != null) queue.offer(node.rightChild);
+                if (node.left != null) queue.offer(node.left);
+                if (node.right != null) queue.offer(node.right);
             }            
         }
         return result;
@@ -107,8 +109,8 @@ public class BinaryTreeTraversal2 {
                 BinaryTreeNode<T> node = queue.poll();
                 levelNodes.add(node.value);
                 
-                if (node.leftChild != null) queue.offer(node.leftChild);
-                if (node.rightChild != null) queue.offer(node.rightChild);
+                if (node.left != null) queue.offer(node.left);
+                if (node.right != null) queue.offer(node.right);
             }
             result.add(levelNodes);
         }
@@ -127,27 +129,15 @@ public class BinaryTreeTraversal2 {
                 30,45, null, null, null, null, null, null,
                 40,42
             };        
-
-        System.out.println("\n\n");
-        
+      
         BinaryTreeNode<Integer> tree1 = BinaryTreeUtil.BuildTree(arr);
         BinaryTreeUtil.printTree(tree1);
 
         System.out.println(dfs(tree1));
         System.out.println(dfsStack(tree1));
-        
-        
-        // System.out.println(bfs(tree1));
-
-        // System.out.println(getNodePerLevel(tree1));
-
-        // System.out.println(findLongestPath(tree1));
-
-        // System.out.println("\n\n");
-
-        // System.out.println(findLongestPathNodes(tree1));
-
-
-
+        System.out.println(bfs(tree1));
+        System.out.println(getNodePerLevel(tree1));
+        System.out.println(findLongestPath(tree1));
+        System.out.println(findLongestPathNodes(tree1));
     }    
 }

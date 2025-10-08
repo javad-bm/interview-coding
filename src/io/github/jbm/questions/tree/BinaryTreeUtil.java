@@ -1,3 +1,5 @@
+package io.github.jbm.questions.tree;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -19,15 +21,15 @@ public class BinaryTreeUtil {
 
             // Left child
             if (i < arr.length && arr[i] != null) {
-                current.leftChild = new BinaryTreeNode<>(arr[i]);
-                queue.offer(current.leftChild);
+                current.left = new BinaryTreeNode<>(arr[i]);
+                queue.offer(current.left);
             }
             i++;
 
             // Right child
             if (i < arr.length && arr[i] != null) {
-                current.rightChild = new BinaryTreeNode<>(arr[i]);
-                queue.offer(current.rightChild);
+                current.right = new BinaryTreeNode<>(arr[i]);
+                queue.offer(current.right);
             }
             i++;
         }
@@ -43,12 +45,12 @@ public class BinaryTreeUtil {
         System.out.println(prefix + (isTail ? "└── " : "├── ") + node.value);
         
         // if both children are null, stop
-        if (node.leftChild == null && node.rightChild == null) return;
+        if (node.left == null && node.right == null) return;
 
         // children printing: left first, then right (right is the "tail")
         String childPrefix = prefix + (isTail ? "    " : "│   ");
-        printTree(node.leftChild, childPrefix, false);
-        printTree(node.rightChild, childPrefix, true);
+        printTree(node.left, childPrefix, false);
+        printTree(node.right, childPrefix, true);
     }
 
     public static <T> void printTree(BinaryTreeNode<T> root) {
