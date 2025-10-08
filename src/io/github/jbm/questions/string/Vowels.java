@@ -1,9 +1,6 @@
 package io.github.jbm.questions.string;
 
-import java.nio.file.Files;
-import java.nio.file.*;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

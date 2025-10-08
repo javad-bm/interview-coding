@@ -23,7 +23,7 @@ public class MostCommonEndpoint {
                         Collectors.toMap(
                             Map.Entry::getKey,
                             Map.Entry::getValue,
-                            (e1, e2) -> e1,  // merge function (not needed here)
+                            (e1, _) -> e1,  // merge function (not needed here)
                             LinkedHashMap::new             // preserve order
                         )
                 );
@@ -90,10 +90,10 @@ public class MostCommonEndpoint {
         public static void main(String[] args) {
         System.out.println("Testing ...");
         String[] inputData = {"/get","/get","/put","/delete","/put","/get", "/test1", "/test1", "/test1", "/test1", "/test1", "/get","/get","/get", "/test2","/test2","/test2","/test2" };
-        List<String> inputDataList = List.of("/get","/get","/put","/delete","/put","/get", "/test1", "/test1", "/test1", "/test1", "/test1", "/get","/get","/get", "/test2","/test2","/test2","/test2");
-//        findMostCommon(inputData, 2);
-//        findMostCommon2(inputData, 2);
-//
-      System.out.println(findMostCommonNoStream(inputData, 3));
+        // List<String> inputDataList = List.of("/get","/get","/put","/delete","/put","/get", "/test1", "/test1", "/test1", "/test1", "/test1", "/get","/get","/get", "/test2","/test2","/test2","/test2");
+      
+        // findMostCommon(inputData, 2);
+        // findMostCommon2(inputData, 2);
+        System.out.println(findMostCommonNoStream(inputData, 3));
     }
 }

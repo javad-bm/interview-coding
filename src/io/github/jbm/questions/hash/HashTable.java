@@ -3,7 +3,6 @@ package io.github.jbm.questions.hash;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
-import java.util.Stack;
 
 public class HashTable<K,V> {
     ArrayList<V> data;

@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 // This class can't be public
-class Person implements Comparable {
+class Person implements Comparable<Person> {
     String name;
     Integer age;
 
@@ -32,8 +32,8 @@ class Person implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        return getName().compareTo(((Person) o).getName());
+    public int compareTo(Person other) {
+        return getName().compareTo(other.name);
     }
 }
 
@@ -94,9 +94,6 @@ public class StreamBasics {
                 .sorted()
                 .limit(5)
                 .forEach(System.out::println);
-
-
-
     }
 }
 

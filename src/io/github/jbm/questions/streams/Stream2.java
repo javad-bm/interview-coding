@@ -1,11 +1,9 @@
 package io.github.jbm.questions.streams;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 class Employee {
     String name;
@@ -138,7 +136,6 @@ public class Stream2 {
         System.out.println(s);
 
     }
-
 }
 
 

@@ -108,9 +108,9 @@ public class MinHeapInt {
         
         heap.print();
 
-        System.out.println(heap.pull());
-        
+        System.out.println(heap.pull());       
         heap.print();
-
+        System.out.println(heap.peek());
+        heap.print();
     }
  }

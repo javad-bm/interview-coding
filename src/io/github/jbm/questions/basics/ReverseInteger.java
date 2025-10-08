@@ -1,8 +1,5 @@
 package io.github.jbm.questions.basics;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class ReverseInteger {
 
     public static int reverse(int x) {
@@ -29,8 +26,5 @@ public class ReverseInteger {
         System.out.println(reverse(120) == 21);
         System.out.println(reverse(0) == 0);
         System.out.println(reverse(1534236469) == 0);
-
-
-
     }
 }

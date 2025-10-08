@@ -1,8 +1,5 @@
 package io.github.jbm.questions.string;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class LongestPalindromicSubstring {
     public static String longestPalindrome(String s) {
         if (s == null || s.isEmpty()) {
@@ -54,7 +51,5 @@ public class LongestPalindromicSubstring {
 
         String s3 = "ABCDEF ABCBA XYZDEF";
         System.out.println(longestPalindrome(s3));
-
-
     }
 }
